@@ -11,7 +11,7 @@ type MathReply struct {
 }
 type MathService struct{}
 
-func (h *MathService) Add(r *http.Request, args *MathArgs, reply *MathReply) error {
+func (p *MathService) Add(r *http.Request, args *MathArgs, reply *MathReply) error {
 	reply.Result =  args.First + args.Second
 	return nil
 }

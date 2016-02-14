@@ -1,4 +1,4 @@
-package src
+package jsonrpc
 
 import (
 	"log"
@@ -29,10 +29,8 @@ func (p Client) Call(method string, args interface{}, result interface{}) {
 	}
 	defer resp.Body.Close()
 
-	err = json2.DecodeClientResponse(resp.Body, &result)
+	err = json2.DecodeClientResponse(resp.Body, result)
 	if err != nil {
 		log.Fatalf("Couldn't decode response. %s", err)
 	}
-
-	log.Println(result)
 }
