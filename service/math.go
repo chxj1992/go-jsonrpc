@@ -1,4 +1,4 @@
-package demo
+package service
 
 import "net/http"
 

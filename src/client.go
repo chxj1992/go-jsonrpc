@@ -33,12 +33,6 @@ func (p Client) Call(method string, args interface{}, result interface{}) {
 	if err != nil {
 		log.Fatalf("Couldn't decode response. %s", err)
 	}
-	log.Printf("%s", result)
-}
 
-type HelloArgs struct {
-	Who string
-}
-type HelloReply struct {
-	Message string
+	log.Println(result)
 }

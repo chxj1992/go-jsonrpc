@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"github.com/chxj1992/go-jsonrpc/src"
-	"github.com/chxj1992/go-jsonrpc/demo"
+	"github.com/chxj1992/go-jsonrpc/service"
 )
 
 func main() {
@@ -11,8 +11,8 @@ func main() {
 	flag.Parse()
 
 	handlers := []src.RpcHandler{
-		src.RpcHandler{"/hello", new(demo.HelloService)},
-		src.RpcHandler{"/math", new(demo.MathService)},
+		src.RpcHandler{"/rpc", new(service.HelloService)},
+		src.RpcHandler{"/rpc", new(service.MathService)},
 	};
 
 	src.Serve(*port, handlers)
