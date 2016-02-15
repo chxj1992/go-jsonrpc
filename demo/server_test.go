@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/chxj1992/go-jsonrpc/jsonrpc"
-	"fmt"
-	"strconv"
+	"testing"
+	"github.com/stretchr/testify/assert"
 )
 
 
@@ -15,21 +15,23 @@ type MathReply struct {
 	Result int
 }
 
-func main() {
-	client := jsonrpc.Client{"http://localhost:12345/rpc"}
+var client = jsonrpc.Client{"http://localhost:12345/rpc"}
 
+func TestHello(t *testing.T) {
 	args := "World"
 	var reply string
 
 	client.Call("HelloService.Say", args, &reply)
-	fmt.Println("message: " + reply)
+	assert.Equal(t, reply, "Hello, World!")
+}
 
+func TestMath(t *testing.T) {
 	mathArgs := MathArgs{1, 2}
 	//	mathArgs := map[string]int{"First":1, "Second":2}
 	var mathReply MathReply
 
 	client.Call("MathService.Add", mathArgs, &mathReply)
-	fmt.Println("result: " + strconv.Itoa(mathReply.Result))
-}
 
+	assert.Equal(t, mathReply.Result, 3)
+}
 
