@@ -4,7 +4,6 @@ import (
 	"flag"
 	"github.com/chxj1992/go-jsonrpc/jsonrpc"
 	"github.com/chxj1992/go-jsonrpc/service"
-	"log"
 )
 
 func main() {
@@ -16,6 +15,5 @@ func main() {
 		jsonrpc.RpcHandler{"/rpc", new(service.MathService)},
 	};
 
-	log.Println("Listen on port: " + *port)
 	jsonrpc.Serve(*port, handlers)
 }
