@@ -1,11 +1,10 @@
 package jsonrpc
 
 import (
-	"net/http"
 	"github.com/gorilla/mux"
 	"github.com/gorilla/rpc/v2"
 	"github.com/gorilla/rpc/v2/json2"
-	"log"
+	"github.com/fvbock/endless"
 )
 
 func Serve(port string, handlers []RpcHandler) {
@@ -17,8 +16,7 @@ func Serve(port string, handlers []RpcHandler) {
 		r.Handle(handler.Path, s)
 	}
 
-	log.Println("Listen on port: " + port)
-	http.ListenAndServe(":" + port, r)
+	endless.ListenAndServe(":" + port, r)
 }
 
 type RpcHandler struct {

@@ -23,6 +23,7 @@ func TestHello(t *testing.T) {
 	var reply string
 
 	client.Call("HelloService.Say", args, &reply)
+
 	assert.Equal(t, reply, "Hello, World!")
 }
 
