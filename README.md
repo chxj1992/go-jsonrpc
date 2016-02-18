@@ -1,11 +1,17 @@
 # go-jsonrpc
 
-* start server
+
+* Install Dependencies
+```sh
+  $ godep restore
+```
+
+* Start Server
 ```sh
   $ go run demo/server.go
 ```
 
-* run client
+* Run Tests
 ```sh
-  $ go run demo/client.go
+  $ go test -v demo/server_test.go
 ```
