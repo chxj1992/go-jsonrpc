@@ -9,12 +9,10 @@ import (
 )
 
 func Serve(port string, handlers []RpcHandler) {
-
-	s := rpc.NewServer()
-	s.RegisterCodec(json2.NewCodec(), "application/json")
-
 	r := mux.NewRouter()
 	for _, handler := range handlers {
+		s := rpc.NewServer()
+		s.RegisterCodec(json2.NewCodec(), "application/json")
 		s.RegisterService(handler.Service, "")
 		r.Handle(handler.Path, s)
 	}

@@ -15,9 +15,10 @@ type MathReply struct {
 	Result int
 }
 
-var client = jsonrpc.Client{"http://localhost:12345/rpc"}
 
 func TestHello(t *testing.T) {
+	client := jsonrpc.Client{"http://localhost:12345/hello"}
+
 	args := "World"
 	var reply string
 
@@ -26,6 +27,8 @@ func TestHello(t *testing.T) {
 }
 
 func TestMath(t *testing.T) {
+	client := jsonrpc.Client{"http://localhost:12345/math"}
+
 	mathArgs := MathArgs{1, 2}
 	//	mathArgs := map[string]int{"First":1, "Second":2}
 	var mathReply MathReply

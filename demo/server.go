@@ -11,8 +11,8 @@ func main() {
 	flag.Parse()
 
 	handlers := []jsonrpc.RpcHandler{
-		jsonrpc.RpcHandler{"/rpc", new(service.HelloService)},
-		jsonrpc.RpcHandler{"/rpc", new(service.MathService)},
+		jsonrpc.RpcHandler{"/hello", new(service.HelloService)},
+		jsonrpc.RpcHandler{"/math", new(service.MathService)},
 	};
 
 	jsonrpc.Serve(*port, handlers)
