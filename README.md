@@ -20,8 +20,8 @@
 ```
 
 
-> the graceful restart feature of server is based on [endless](https://github.com/fvbock/endless).
-Check the [examples](https://github.com/fvbock/endless/tree/master/examples) for more information.
+> The graceful restart feature of server is based on [endless](https://github.com/fvbock/endless).
+Check [examples](https://github.com/fvbock/endless/tree/master/examples) for more information.
 
 #### Signals
 
