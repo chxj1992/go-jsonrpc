@@ -1,5 +1,6 @@
 # go-jsonrpc
 
+> This is Golang Jsonrpc(v2) Package
 
 #### Usage
 
@@ -13,13 +14,14 @@
   $ go run demo/server.go
 ```
 
-* Run Tests
+* Run Tests (Client)
 ```sh
   $ go test -v demo/server_test.go
 ```
 
 
-> graceful restart support is based on [endless](https://github.com/fvbock/endless)
+> the graceful restart feature of server is based on [endless](https://github.com/fvbock/endless).
+Check the [examples](https://github.com/fvbock/endless/tree/master/examples) for more information.
 
 #### Signals
 
