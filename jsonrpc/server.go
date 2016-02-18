@@ -16,6 +16,7 @@ func Serve(port string, handlers []RpcHandler) {
 		r.Handle(handler.Path, s)
 	}
 
+	endless.DefaultHammerTime = -1
 	endless.ListenAndServe(":" + port, r)
 }
 
